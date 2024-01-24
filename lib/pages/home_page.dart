@@ -3,6 +3,16 @@ import 'package:hw4/pages/new_task_page.dart';
 import '../controllers/task_controller.dart';
 import '../model/task.dart';
 
+//       Class: Mobile Application Development
+//        Name: Dat Tran
+//        Date: Jan 24, 2024
+//    Homework: Week 4
+//      Points: 100 pts
+//         Due: Feb 8, 2024
+
+// Estimate Completion time: 4 Hours
+// Actual Completition time: 3 Hours
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -45,7 +55,9 @@ class _HomePageState extends State<HomePage> {
                     MaterialPageRoute(
                         builder: (context) => const NewTaskPage()));
 
-                if (result != null) TaskController().insertTask(result);
+                if (result != "" && result != null) {
+                  TaskController().insertTask(result);
+                }
               },
               child: const Icon(Icons.add, color: Colors.white)),
         );
@@ -55,6 +67,8 @@ class _HomePageState extends State<HomePage> {
 
   Widget _toWidget(Task task) {
     return CheckboxListTile(
+        checkColor: Colors.white,
+        activeColor: Colors.blue,
         title: Text(task.description),
         value: task.isCompleted,
         onChanged: (bool? value) {

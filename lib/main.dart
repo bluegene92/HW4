@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'pages/home_page.dart';
 
 // Estimate Completion time: 4 Hours
-// Actual Completition time:
+// Actual Completition time: 3 Hours
 
 void main() {
   runApp(const MyApp());
